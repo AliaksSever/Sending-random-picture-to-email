@@ -1,0 +1,19 @@
+{% extends 'NatureImage/base.html' %}
+
+
+{% block title %}
+Send
+{% endblock %}
+
+
+{% block content %}
+<h1>Send page</h1>
+<form action="{% url 'thanks' %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input name='email' type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    </div>
+    <button class="btn btn-success" type="submit">Submit a picture</button>
+</form>
+{% endblock %}

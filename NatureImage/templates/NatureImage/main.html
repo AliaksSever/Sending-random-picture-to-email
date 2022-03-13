@@ -1,0 +1,19 @@
+{% extends 'NatureImage/base.html' %}
+
+
+{% block title %}
+Main page
+{% endblock %}
+
+
+{% block content %}
+<h1>Chose width and height for random image</h1>
+<form action="{% url 'save' %}" method="POST">
+    {% csrf_token %}
+    <input name="width" type="number" placeholder="width" class="from-control"><br>
+    <br>
+    <input name="height" type="number" placeholder="height" class="from-control"><br>
+    <br>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+{% endblock %}
